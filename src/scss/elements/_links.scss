@@ -10,6 +10,13 @@ button {  // Added button
   transition: $transition-ease;
 }
 
+section {
+  a {
+    color: $color-orange;
+    text-decoration: underline;
+  }
+}
+
 a:hover,
 a:focus,
 button:hover,

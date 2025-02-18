@@ -9,6 +9,24 @@
 //   function acf_icon_path_suffix( $path_suffix ) {
 //       return 'img/icons/';
 //   }
+
+
+function add_sponsor_label_script() {
+    if ( tribe_is_event() ) {
+        ?>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const websiteLabel = document.querySelector('.tribe-events-event-url-label');
+            if (websiteLabel) {
+                websiteLabel.textContent = 'Sponsor:';
+            }
+        });
+        </script>
+        <?php
+    }
+}
+add_action( 'wp_footer', 'add_sponsor_label_script' );
+
   
 //used for Stackable blocks support - match to wrapper width 
 global $content_width;

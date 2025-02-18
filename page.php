@@ -1,6 +1,13 @@
 <?php get_header(); ?>
 
 <div class="o-layout-row">
+  <div class="c-hero">
+    <div class="o-wrapper">
+      <div class="c-hero__content">
+        <h1 class="c-hero__title"><?php the_title(); ?></h1>
+      </div>
+    </div>
+  </div>
   <main id="main-content" class="" role="main" itemscope itemprop="mainContentOfPage" itemtype="https://schema.org/WebPageElement">
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
       <section class="editor-content  clearfix">

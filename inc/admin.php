@@ -146,7 +146,23 @@ add_action('admin_head', 'custom_acf_repeater_colors');
 // ++ REMOVE ACF FROM ADMIN MENU
 // add_filter('acf/settings/show_admin', '__return_false');
 
+// fix scroll down!
+wp_add_inline_style( 'wp-block-library', 
+'.y4N88NIV4gaOm_z2wbU8 {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    margin: -16px -16px 0;
+    padding: 16px;
+    position: sticky !important;
+    top: var(--topOffset);
+    top: var(--gb-sb-panel-header-height, 47px);
+    z-index: 10001;
+}
 
+.kd_3GirFaZhuAbes1_cl {
+    top: 133px !important;
+}' 
+);
 
 /************* CUSTOM BACKEND FOOTER **************/
 // function gdt_custom_admin_footer() {

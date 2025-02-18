@@ -3,3 +3,159 @@
    ========================================================================== */
 
 // ideally this file is forever blank. likely it won't be. :(
+.c-white-slice {
+   &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      height: 120px;
+      background-color: #fff;
+      width: 100%;
+   }
+   &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      height: 120px;
+      background-color: #fff;
+      width: 100%;
+   }
+}
+
+
+// timeline
+.timeline {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  position: relative;
+  overflow: hidden;
+
+  .timeline-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    position: relative;
+
+    // Connecting line between items
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      right: 50px;
+      height: 3px;
+      background-color: $color-red;
+      z-index: 1;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-top: 80px;
+      transition: transform 0.3s ease;
+
+      // Year marker
+      &::before {
+        content: '';
+        position: absolute;
+        top: 41px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20px;
+        height: 20px;
+        background-color: #fff;
+        border: 4px solid $color-red;
+        border-radius: 50%;
+        z-index: 2;
+      }
+
+      // Year label
+      .date {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: $color-red;
+        color: #fff;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.9em;
+        font-weight: 500;
+      }
+
+      img {
+        width: 100%;
+        height: 250px; // Reduced height
+        object-fit: cover;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .location {
+        margin-top: 20px;
+        font-size: 1.8em;
+        font-weight: bold;
+        color: #333;
+        text-align: center;
+        transition: color 0.3s ease;
+      }
+
+      // Hover effects
+      &:hover {
+        img {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .location {
+          color: $color-red;
+        }
+      }
+    }
+  }
+}
+
+// Responsive design
+@media screen and (max-width: 992px) {
+  .timeline {
+    .timeline-items {
+      grid-template-columns: repeat(2, 1fr);
+
+      &::before {
+        display: none;
+      }
+
+      .timeline-item {
+        padding-top: 40px;
+
+        img {
+          height: 220px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .timeline {
+    .timeline-items {
+      grid-template-columns: 1fr;
+      gap: 30px;
+
+      .timeline-item {
+        padding-top: 40px;
+
+        img {
+          height: 200px;
+        }
+
+        .location {
+          font-size: 1.5em;
+        }
+      }
+    }
+  }
+}
+
+

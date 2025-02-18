@@ -1,0 +1,238 @@
+/** Swiper styles **/
+
+:root {
+    --swiper-navigation-color: rgba(255, 255, 255, 1);
+  }
+
+ 
+
+
+
+  .swiper {
+    user-select: none;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+    border-radius: 20px;
+    height: 100%;
+
+    padding: 0px 0px;
+  }
+
+  .swiper-slide {
+    display: flex;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  .swiper-slide-bg-image {
+    position: absolute;
+    ratio: 1/1;
+    border-radius: 20px;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  .swiper-slide-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+  }
+
+  .swiper-slide-bg-image-c61b {
+    object-fit: cover;
+    border-radius: inherit;
+  }
+  .swiper-slide-content-94be {
+    padding: 32px 16px;
+    flex-direction: column;
+    gap: 0px;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+  .swiper-slide-text-66a3 {
+    color: rgba(255, 255, 255, 1);
+    text-align: left;
+    font-size: 48px;
+    line-height: 1.5;
+    font-weight: bold;
+  }
+
+
+  .c-home-hero {
+position: relative;
+    background-color: $color-green;
+    background-image: url(../img/flourish_long2.svg);
+    background-size: 4043px 235px;
+    background-position:  center 102%;
+    background-repeat: repeat-x;
+    padding-top: 95px;
+    padding-bottom: 100px;
+    padding-right: 25px;
+    padding-left: 25px;
+    @media(width >= 1030px) {
+      padding-top: 161px;
+    padding-bottom: 140px;
+
+    
+    } 
+    .o-wrapper-wide, .o-wrapper {
+position: relative;
+
+    }
+    h1 {
+        z-index: 2;
+        line-height: 1;
+        position: relative;
+        color: $color-yellow;
+        font-size: clamped(50px, 80px);
+        @media(width >= 1380px) {
+          font-size: clamped(80px, 110px);
+        } 
+    }   
+}
+
+.c-home-hero-content {
+    padding: 30px 0 0 0;
+    max-width: 100%;
+    text-align: center;
+    @media(width >= 1030px) { 
+      text-align: left;
+    width: 733px;
+
+    }
+    
+    p {
+      margin-top: 20px;
+     line-height: 1.2;
+     @media(width >= 1030px) {
+      padding-left: 12px;
+      padding-right: 70px;
+     
+     } 
+    }
+    .order-button {
+      @media(width >= $bp-large) {
+        display: none;
+
+      } 
+    }
+}
+
+.c-taco-swipe {
+ display: none;
+    @media(width >= 1030px) {
+      display: block;
+      transform: rotate(5deg);
+      height: 450px;
+      width: 450px;
+      border-radius: 20px;
+      position: relative;
+      top:40px;
+      z-index: 0;
+      position: absolute;
+      right: 40px;
+    top: 0px;
+    } 
+    @media(width >= 1300px) {
+      height: 550px;
+      width: 550px;
+    } 
+  }
+  
+  .home-alert {
+    color: #FFF;
+font-family: "Roboto Condensed";
+font-size: clamped(24px, 28px);
+font-style: normal;
+font-weight: 600;
+line-height: 35px; /* 100% */
+text-transform: capitalize;
+@media(width >= 1180px) {
+  font-size: clamped(28px, 32px);
+
+} 
+  }
+
+  .c-taco-illustration {
+    position: absolute;
+    right: -60px;
+    top: 120px;
+    z-index: 11;
+    width: 140px;
+    height: 140px;
+    background: $color-black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    img {
+      width: 100%;
+      transform: rotate(30deg);
+      
+    }
+
+    
+  }
+
+  .c-tacolove-illustration {
+    position: absolute;
+    right: -92px;
+    transform: rotate(-14deg);
+    top: 250px;
+    z-index: 10;
+    width: 210px;
+ 
+    background: #FFF;
+    border-radius: 33px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 25px;
+    img {
+      width: 100%;
+      
+    }
+  }
+
+  .c-doordash-content {
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    h2 {
+      margin-bottom: 0;
+
+    }
+    @media(width >= 570px) {
+      gap: 0;
+    flex-direction: row;
+    padding-left: 14px;
+    padding-top: 40px;
+      h2 {
+      margin-right: 40px;
+
+      }
+    }
+    img {
+      width: 86%;
+    } 
+    @media(width >= 1086px) {
+      img {
+        width: 100%;
+      } 
+    } 
+  }

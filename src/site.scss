@@ -12,7 +12,8 @@
 
 
 // ++ VENDOR +++++++++++++++++++++++++++++++++
-@import "../node_modules/animate.css/animate.css";
+// @import "../node_modules/animate.css/animate.css";
+@import "../node_modules/swiper/swiper-bundle.min.css";
 // @import "../node_modules/aos/dist/aos.css";
 
 @import "../node_modules/magnific-popup/dist/magnific-popup.css";
@@ -47,9 +48,11 @@
 @import "./scss/components/_header.scss";
 @import "./scss/components/_pills.scss";
 @import "./scss/components/_search.scss";
+@import "./scss/components/_home.scss";
 @import "./scss/components/_small_blocks.scss";
 @import "./scss/components/_logo-main.scss";
 @import "./scss/components/_nav-main.scss";
+@import "./scss/components/_tribe.scss";
 // @import "./scss/components/_nav-modal.scss";
 @import "./scss/components/_navmobile.scss";
 @import "./scss/components/_nav-tertiary.scss";

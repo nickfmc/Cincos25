@@ -4,18 +4,22 @@
 
 .c-logo-main {
   position: absolute;
-  top: 18px;
+  top: 24px;
   z-index: z(default);
+  @media(width >= $bp-medium) {
+    top: 22px;
+  
+  } 
   & a {
     display: block;
   }
   & img {
     display: block;
-    width: 150px;
+    width: 200px;
     height: auto;
     max-height: $page-header-height;
     @media (width >= $bp-medium) {
-      width: 250px;
+      width: 350px;
      } 
   }
 }

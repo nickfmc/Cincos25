@@ -31,14 +31,29 @@
 					"name": "Medium grey"
 				},
 				{
-					"slug": "primary",
-					"color": "#00838f",
-					"name": "Primary"
+					"slug": "ccred",
+					"color": "#C22335",
+					"name": "Red Pepper"
 				},
 				{
-					"slug": "secondary",
-					"color": "#4fb3bf",
-					"name": "Secondary" 
+					"slug": "ccgreen",
+					"color": "#4E8E41",
+					"name": "Cilantro"
+				},
+				{
+					"slug": "cctiger",
+					"color": "#ED7926",
+					"name": "Tiger Orange"
+				},
+				{
+					"slug": "ccyellow",
+					"color": "#FFD529",
+					"name": "Pineapple Salsa"
+				},
+				{
+					"slug": "ccbean",
+					"color": "#231F20",
+					"name": "Black Bean"
 				},
 				{
 					"slug": "transparent",

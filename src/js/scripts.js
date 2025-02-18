@@ -198,130 +198,6 @@ menuItems.forEach(function(menuItem) {
 
 
 
-// Accessible Search Popup
-document.addEventListener('DOMContentLoaded', function() {
-  const searchButton = document.getElementById('search-button');
-  const searchPopup = document.getElementById('search-popup');
-  const searchSubmit = document.getElementById('search-submit');
-  const searchField = document.getElementById('s'); // Corrected ID for the search field
-  const closeSearchPopupButton = document.getElementById('close-search-popup');
-
-  if (!searchButton || !searchPopup || !searchField || !closeSearchPopupButton) {
-      console.error('One or more elements are not found:', {
-          searchButton,
-          searchPopup,
-          searchField,
-          closeSearchPopupButton
-      });
-      return;
-  }
-
-  window.closeSearchPopup = function() {
-      searchButton.setAttribute('aria-expanded', 'false');
-      searchPopup.setAttribute('aria-hidden', 'true');
-      searchPopup.setAttribute('inert', '');
-      searchButton.focus();
-      releaseFocus();
-  };
-
-  searchButton.addEventListener('click', function() {
-      const isExpanded = searchButton.getAttribute('aria-expanded') === 'true';
-      searchButton.setAttribute('aria-expanded', !isExpanded);
-      searchPopup.setAttribute('aria-hidden', isExpanded);
-      searchPopup.removeAttribute('inert');
-      if (!isExpanded) {
-          searchField.focus();
-          trapFocus(searchPopup);
-      } else {
-          window.closeSearchPopup(); 
-      }
-  }); 
-
-  // Add keydown event listener to trigger click on Enter key press for the search field
-  searchField.addEventListener('keydown', function(event) {
-      if (event.key === 'Enter') { 
-          event.preventDefault();
-          searchSubmit.click();
-      }
-  });
-
-  // Add keydown event listener to trigger click on Enter key press for the search submit button
-  searchSubmit.addEventListener('keydown', function(event) {
-      if (event.key === 'Enter') {
-          event.preventDefault();
-          searchSubmit.click();
-      }
-  });
-
-  closeSearchPopupButton.addEventListener('click', function() {
-      window.closeSearchPopup();
-  });
-
-  function trapFocus(element) {
-      const focusableElements = element.querySelectorAll('a, button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])');
-      
-      if (focusableElements.length === 0) {
-          console.error('No focusable elements found within the element.');
-          return;
-      }
-
-      const firstElement = focusableElements[0];
-      const lastElement = focusableElements[focusableElements.length - 1];
-
-      if (!firstElement || !lastElement) {
-          console.error('First or last focusable element is null.');
-          return;
-      }
-
-      function handleFocus(event) {
-          if (event.shiftKey) {
-              if (document.activeElement === firstElement) {
-                  event.preventDefault();
-                  lastElement.focus();
-              }
-          } else {
-              if (document.activeElement === lastElement) {
-                  event.preventDefault();
-                  firstElement.focus();
-              }
-          }
-      }
-
-      element.addEventListener('keydown', handleFocus);
-      element.dataset.trapFocus = 'true';
-  }
-
-  function releaseFocus() {
-      const element = document.querySelector('[data-trap-focus="true"]');
-      if (element) {
-          element.removeEventListener('keydown', handleFocus);
-          delete element.dataset.trapFocus;
-      }
-  }
-
-  function handleFocus(event) {
-      const element = document.querySelector('[data-trap-focus="true"]');
-      if (!element) return;
-
-      const focusableElements = element.querySelectorAll('a, button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])');
-      const firstElement = focusableElements[0];
-      const lastElement = focusableElements[focusableElements.length - 1];
-
-      if (event.shiftKey) {
-          if (document.activeElement === firstElement) {
-              event.preventDefault();
-              lastElement.focus();
-          }
-      } else {
-          if (document.activeElement === lastElement) {
-              event.preventDefault();
-              firstElement.focus();
-          }
-      }
-  }
-});
-
-// END Accessible Search Popup
 
 // better accessible dropdown menu
 document.addEventListener('DOMContentLoaded', function() {
@@ -474,9 +350,123 @@ document.addEventListener('DOMContentLoaded', () => {
 // END external link accessibility script
 
 
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.querySelector('.order-modal');
+    const locationSelection = document.querySelector('.location-selection');
+    const orderTypeSelection = document.querySelector('.order-type-selection');
+    const locationButtons = document.querySelectorAll('.location-btn');
+    const backButton = document.querySelector('.back-button');
+    const deliveryLink = document.querySelector('.delivery-link');
+    
+    let selectedLocation = '';
+    
+    // Open modal
+    const orderButtons = document.querySelectorAll('.order-button');
+
+    orderButtons.forEach(button => {
+      button.addEventListener('click', function() {
+          // Check if this is the mobile nav order button
+          if (button.classList.contains('order-button-mobilenav')) {
+              // Remove the mobile nav open class
+              document.querySelector('html').classList.remove('has-modal-nav-open');
+          }
+          
+          // Then show the order modal
+          modal.style.display = 'block';
+          modal.setAttribute('aria-hidden', 'false');
+      });
+  });
+
+    // Close modal when clicking outside
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Location selection
+    locationButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            selectedLocation = this.dataset.location;
+            
+            // Update delivery link based on location
+            const deliveryUrls = {
+                'epping': 'https://order.online/store/cinco\'s-cantina-epping-923337/?delivery=true&hideModal=true',
+                'dover': 'https://order.online/store/cinco\'s-cantina-dover-548156/?delivery=true&hideModal=true',
+                'rochester': 'https://order.online/store/cinco\'s-cantina-rochester-30715928/?delivery=true&hideModal=true'
+            };
+
+            const pickupUrls = {
+                'epping': 'https://order.toasttab.com/online/cincos-cantina-epping',
+                'dover': 'https://order.toasttab.com/online/cincos-cantina-dover',
+                'rochester': 'https://order.toasttab.com/online/cincos-cantina-rochester'
+            };
+
+                 // Update both links' href attributes
+        deliveryLink.href = deliveryUrls[selectedLocation];
+        const pickupLink = document.querySelector('.option-btn[data-type="pickup"]');
+        pickupLink.href = pickupUrls[selectedLocation];
+        
+        // Update pickup/delivery text
+        pickupLink.textContent = `Pickup from ${selectedLocation.charAt(0).toUpperCase() + selectedLocation.slice(1)}`;
+        deliveryLink.textContent = `Delivery from ${selectedLocation.charAt(0).toUpperCase() + selectedLocation.slice(1)}`;
+        
+        // Show order type selection
+        locationSelection.classList.add('hidden');
+        orderTypeSelection.classList.remove('hidden');
+        });
+    });
+
+    // Back button
+    backButton.addEventListener('click', function() {
+        orderTypeSelection.classList.add('hidden');
+        locationSelection.classList.remove('hidden');
+    });
+
+    // Pickup button
+    document.querySelector('.option-btn[data-type="pickup"]').addEventListener('click', function() {
+        // Handle pickup logic here
+        console.log(`Pickup selected for ${selectedLocation}`);
+    });
+
+    // Close button
+    document.querySelector('.close-button').addEventListener('click', function() {
+        closeModal();
+    });
+    
+
+    function closeModal() {
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+        // Reset to first screen
+        orderTypeSelection.classList.add('hidden');
+        locationSelection.classList.remove('hidden');
+    }
+});
+
+
+
+
+
+
 // *********************** START CUSTOM JQUERY DOC READY SCRIPTS *******************************
 jQuery( document ).ready(function( $ ) {
 
+    var swiper = new Swiper(".swiper", {
+        modules: [SwiperGL],
+        effect: "gl",
+        gl: { shader: "peel-x" },
+        speed: 1500,
+        // navigation: {
+        //   prevEl: ".swiper-button-prev",
+        //   nextEl: ".swiper-button-next",
+        // },
+        autoplay: { enabled: true },
+      });
    // get Template URL
    var templateUrl = object_name.templateUrl;
    

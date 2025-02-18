@@ -18,7 +18,7 @@
 .o-wrapper-wide {
   margin-left: auto;
   margin-right: auto;
-  max-width: 1180px;
+  max-width: 1300px;
   width: 100%;
 }
 
@@ -3139,11 +3139,13 @@
    ========================================================================== */
 html {
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 body {
-  color: #000;
-  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+  color: #231F20;
+  font-family: "Roboto Condensed", sans-serif;
   line-height: 1.5;
   -webkit-overflow-scrolling: touch;
 }
@@ -3197,9 +3199,8 @@ blockquote::before {
 /* ==========================================================================
    HEADINGS
    ========================================================================== */
-h1, .h1-style, h2, .h2-style, h3, .h3-style, h4, .h4-style, h5, .h5-style, h6, .h6-style {
-  color: #323232;
-  font-family: "Inter", serif;
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Oswald", serif;
   font-weight: 600;
   line-height: 1.1;
   margin: 0 0 1rem 0;
@@ -3210,15 +3211,19 @@ h1 a, .h1-style a, h2 a, .h2-style a, h3 a, .h3-style a, h4 a, .h4-style a, h5 a
 }
 
 h1, .h1-style {
-  font-size: clamp(2.81rem, 1.5vw + 2.44rem, 3.75rem);
+  font-size: clamp(5rem, 3vw + 4.25rem, 6.88rem);
+  text-transform: uppercase;
+  font-weight: 900;
 }
 
 h2, .h2-style {
-  font-size: clamp(1.88rem, 1vw + 1.63rem, 2.5rem);
+  font-size: clamp(1.88rem, 6vw + 0.38rem, 5.63rem);
+  text-transform: uppercase;
+  font-weight: 900;
 }
 
 h3, .h3-style {
-  font-size: clamp(1.75rem, 0.8vw + 1.55rem, 2.25rem);
+  font-size: clamp(1.75rem, 1.2vw + 1.45rem, 2.5rem);
 }
 
 h4, .h4-style {
@@ -3226,7 +3231,12 @@ h4, .h4-style {
 }
 
 h5, .h5-style {
-  font-size: clamp(1.25rem, 0.2vw + 1.2rem, 1.38rem);
+  font-size: clamp(1.13rem, 0.2vw + 1.08rem, 1.25rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 8px;
+  text-transform: uppercase;
 }
 
 h6, .h6-style {
@@ -3251,23 +3261,23 @@ hr, hr.wp-block-separator {
    FORM STYLES
    ========================================================================== */
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-  color: #000;
+  color: #231F20;
   opacity: 0.8;
 }
 input::-moz-placeholder, textarea::-moz-placeholder {
-  color: #000;
+  color: #231F20;
   opacity: 0.8;
 }
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  color: #000;
+  color: #231F20;
   opacity: 0.8;
 }
 input::-ms-input-placeholder, textarea::-ms-input-placeholder {
-  color: #000;
+  color: #231F20;
   opacity: 0.8;
 }
 input::placeholder, textarea::placeholder {
-  color: #000;
+  color: #231F20;
   opacity: 0.8;
 }
 
@@ -3358,6 +3368,11 @@ button {
   transition: all 250ms ease;
 }
 
+section a {
+  color: #ED7926;
+  text-decoration: underline;
+}
+
 a:hover,
 a:focus,
 button:hover,
@@ -3384,6 +3399,7 @@ p {
   line-height: 1.5;
   margin: 0 0 1rem 0;
   padding: 0;
+  font-size: 18px;
 }
 
 /* ==========================================================================
@@ -3410,7 +3426,7 @@ p {
 }
 .c-blk-btn a:hover, .c-btn-primary a:hover, .wp-block-button.is-style-standard a.wp-block-button__link:hover, .wp-block-button.is-style-standard .wp-block-button__link:hover {
   background-color: #EAEAEA;
-  color: #000;
+  color: #231F20;
 }
 
 .c-btn-textonly svg {
@@ -6323,7 +6339,7 @@ p {
 }
 
 .is-style-secondaryfont {
-  font-family: "Inter", serif;
+  font-family: "Oswald", serif;
 }
 
 .wp-block[data-align=full] .wp-block-group .wp-block {
