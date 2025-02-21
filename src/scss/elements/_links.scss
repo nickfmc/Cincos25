@@ -11,7 +11,7 @@ button {  // Added button
 }
 
 section {
-  a {
+  a:not(.btn-red):not(.btn-dark) {
     color: $color-orange;
     text-decoration: underline;
   }

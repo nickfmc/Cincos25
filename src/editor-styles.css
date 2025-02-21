@@ -3368,7 +3368,7 @@ button {
   transition: all 250ms ease;
 }
 
-section a {
+section a:not(.btn-red):not(.btn-dark) {
   color: #ED7926;
   text-decoration: underline;
 }
