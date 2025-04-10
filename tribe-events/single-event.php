@@ -43,6 +43,21 @@ get_header();
                     <!-- Event content -->
                     <div class="tribe-events-single-event-description">
                         <?php the_content(); ?>
+                        <?php
+    // Check if event is in fiesta-fundraiser category
+    if (has_term('fiesta-fundraiser', 'tribe_events_cat')) : ?>
+        <div class="fiesta-fundraiser-cta">
+            <div class="cta-inner">
+                <h3>Fiesta Fundraiser</h3>
+                <p>Are you a Nonprofit primarily serving the local community or surrounding areas of Rochester, Dover, and Epping and want to partner to raise some money</p>
+                <div class="cta-buttons">
+                    <a href="/cincos-community-giving/" class="cta-button c-btn-yellow">Apply Today</a>
+                  
+                </div>
+            </div>
+        </div>
+        <?php endif; ?>
+
                     </div>
                 </div>
 
@@ -51,7 +66,7 @@ get_header();
                     <!-- Event meta -->
                     <?php do_action( 'tribe_events_single_event_before_the_meta' ); ?>
                     <?php tribe_get_template_part( 'modules/meta' ); ?>
-                    <?php do_action( 'tribe_events_single_event_after_the_meta' ); ?>
+                    <?php //do_action( 'tribe_events_single_event_after_the_meta' ); ?>
                 </div>
             </div>
 
@@ -62,14 +77,7 @@ get_header();
             $prev_event_link = tribe_get_prev_event_link( '&laquo; Previous ' . $events_label_plural );
             ?>
 
-            <nav class="tribe-events-nav-pagination">
-                <?php if ( $prev_event_link ): ?>
-                    <div class="tribe-events-prev-event"><?php echo $prev_event_link; ?></div>
-                <?php endif; ?>
-                <?php if ( $next_event_link ): ?>
-                    <div class="tribe-events-next-event"><?php echo $next_event_link; ?></div>
-                <?php endif; ?>
-            </nav>
+        
 
         <?php endwhile; ?>
     </main>

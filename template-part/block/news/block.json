@@ -1,0 +1,16 @@
+{
+    "name": "acf/news-block",
+    "title": "News Block",
+    "description": "Custom News Block",
+    "icon": "admin-comments",
+    "keywords": ["news", "block"],
+    "category": "myblocks",
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "news.php"
+    },
+    "example": {
+        "attributes": {}
+    },
+    "align": "full"
+}

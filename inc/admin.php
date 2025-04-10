@@ -164,6 +164,19 @@ wp_add_inline_style( 'wp-block-library',
 }' 
 );
 
+// user details
+// Add custom social media fields to user profiles
+function add_social_media_fields($user_contact) {
+    
+    // Add LinkedIn field
+    $user_contact['linkedin'] = 'LinkedIn URL';
+    
+    // Website field already exists by default in WordPress
+    
+    return $user_contact;
+}
+add_filter('user_contactmethods', 'add_social_media_fields');
+
 /************* CUSTOM BACKEND FOOTER **************/
 // function gdt_custom_admin_footer() {
 //   echo '<span id="footer-dev-cred">Developed by <a href="https://mountainairweb.com" target="_blank">Mountain Air Web</a></span>.';

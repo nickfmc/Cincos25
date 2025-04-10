@@ -18,7 +18,7 @@ align-self: stretch;
 }
 
 form {
-  input {
+  input, select, textarea {
     display: flex;
     padding: 10px 14px;
     align-items: center;
@@ -52,5 +52,29 @@ form {
 @media (forced-colors: active) {
   form input:focus {
     outline: 2px solid SelectedItem;
+  }
+}
+
+.piotnetforms-button {
+  display: inline-block;
+  background-color: #FFD700 !important; /* Yellow background */
+  border: none;
+  border-radius: 50px !important; /* Rounded edges */
+  color: black !important; /* Text color */
+  font-weight: bold; /* Bold text */
+  font-size: 20px; /* Font size */
+  padding: 15px 30px; /* Padding for order-button size */
+  text-align: center;
+  text-decoration: none;
+  box-shadow: -2px 6px 0 #006400; /* Dark green shadow for 3D effect */
+  text-transform: uppercase;
+  font-family: $font-secondary;
+  font-weight: 900;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  &:hover {
+    box-shadow: -1px 3px 0 #006400; /* Slightly reduced shadow on hover */
+    top: 2px; /* Gives a subtle order-button press effect */
   }
 }

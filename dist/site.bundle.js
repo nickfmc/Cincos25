@@ -230,26 +230,13 @@ trapFocus(modalNavWrap);
 // });
 // SLIDING VERSION ////////////////////
 
-// // ACCORDION VERSION ////////////////////
-// Get all the menu items that have a submenu
+/// Get all the menu items that have a submenu
 var menuItems = document.querySelectorAll('.c-mobile-menu .menu-item-has-children');
 
 // Loop through the menu items
 menuItems.forEach(function (menuItem) {
   // Get the link inside the menu item
   var link = menuItem.querySelector('a');
-
-  // Clone the link
-  var clonedLink = link.cloneNode(true);
-
-  // Add 'Overview' to the cloned link text
-  clonedLink.textContent += ' Overview';
-
-  // Get the submenu inside the menu item
-  var submenu = menuItem.querySelector('.sub-menu');
-
-  // Insert the cloned link at the top of the submenu
-  submenu.insertBefore(clonedLink, submenu.firstChild);
 
   // Add a click event listener to the original link
   link.addEventListener('click', function (event) {
@@ -269,13 +256,13 @@ menuItems.forEach(function (menuItem) {
     });
 
     // Toggle the 'open' class on the submenu
+    var submenu = menuItem.querySelector('.sub-menu');
     submenu.classList.toggle('open');
 
     // Toggle the 'is-open' class on the menu item
     menuItem.classList.toggle('is-open');
   });
 });
-// // ACCORDION VERSION ////////////////////
 
 // better accessible dropdown menu
 document.addEventListener('DOMContentLoaded', function () {
@@ -465,6 +452,12 @@ document.addEventListener('DOMContentLoaded', function () {
   // Location selection
   locationButtons.forEach(function (button) {
     button.addEventListener('click', function () {
+      // Check if this is the gift cards button
+      if (this.dataset.location === 'gift-cards') {
+        // Redirect directly to gift cards URL
+        window.location.href = 'https://www.toasttab.com/cincos-cantina-epping/giftcards?utm_source=undefined&utm_content=online--cincos-cantina-epping&utm_medium=toast_sites&utm_campaign=giftcards';
+        return; // Exit the function early
+      }
       selectedLocation = this.dataset.location;
 
       // Update delivery link based on location

@@ -301,4 +301,117 @@ body .u-break-early {
 
   // IMPORTED
 
-  
+  .c-author-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin: 2rem 0;
+}
+
+.c-author-card__header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.c-author-card__header img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.c-author-card__name {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.c-author-card__position {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.c-author-card__bio {
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+.c-author-card__footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.c-author-card__stats {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.c-author-card__social {
+    display: flex;
+    gap: 1rem;
+}
+
+.c-author-card__social-link {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f5f5f5;
+    transition: all 0.3s ease;
+}
+
+.c-author-card__social-link:hover {
+    background: #e0e0e0;
+}
+
+.c-author-card__link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #f5f5f5;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+}
+
+.c-author-card__link:hover {
+    background: #e0e0e0;
+}
+
+@media (max-width: 768px) {
+    .c-author-card {
+        padding: 1.5rem;
+    }
+
+    .c-author-card__footer {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+}
+
+.c-author-card__social-link svg {
+    width: 24px;
+    height: 24px;
+    fill: #0077B5; /* LinkedIn brand color */
+    transition: fill 0.2s ease;
+}
+
+.c-author-card__social-link:hover svg {
+    fill: #005582;
+}

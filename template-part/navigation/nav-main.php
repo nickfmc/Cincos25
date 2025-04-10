@@ -28,6 +28,14 @@
               <div class="location-selection">
                   <h2 class="h4-style">Select a Location</h2>
                   <div class="location-options">
+                  <button class="location-btn" data-location="dover">
+                          <h3 class="h4-style">Dover</h3>
+                          <p><strong>446 Central Avenue</strong></p>
+                          <p>Mon - Thu: 11am to 10pm<br />
+Fri & Sat: 11am to 11pm<br />
+Sun: 11am to 9pm</p>
+                      </button>
+                      
                       <button class="location-btn" data-location="epping">
                           <h3 class="h4-style">Epping</h3>
                           <p><strong>1 Brickyard Square</strong></p>
@@ -36,13 +44,7 @@ Fri & Sat: 11am to 10pm<br />
 Sun: 11am to 9pm</p>
                       </button>
               
-                      <button class="location-btn" data-location="dover">
-                          <h3 class="h4-style">Dover</h3>
-                          <p><strong>446 Central Ave</strong></p>
-                          <p>Mon - Thu: 11am to 10pm<br />
-Fri & Sat: 11am to 11pm<br />
-Sun: 11am to 9pm</p>
-                      </button>
+                    
               
                       <button class="location-btn" data-location="rochester">
                           <h3 class="h4-style">Rochester</h3>
@@ -51,6 +53,12 @@ Sun: 11am to 9pm</p>
 Fri & Sat: 11am to 11pm<br />
 Sun: 11am to 9pm</p>
                       </button>
+
+                      <button class="location-btn  location-btn--gc" data-location="gift-cards">
+                          <h3 class="h4-style">Gift Cards</h3>
+                          <p><strong>Order Online</strong></p>
+                        </button>
+
                   </div>
               </div>
               <!-- Step 2: Order Type Selection -->

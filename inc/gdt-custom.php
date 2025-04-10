@@ -144,6 +144,7 @@ add_shortcode('next_event', 'next_tribe_event_shortcode');
 
 
 
+
 // ****************** Grab custom data and input into Generate Block headline field ************
 
                   // function custom_field_gb_query() {

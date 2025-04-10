@@ -1,0 +1,16 @@
+{
+    "name": "acf/giftcard",
+    "title": "Gift Card",
+    "description": "Custom Gift Card Block",
+    "icon": "gift",
+    "keywords": ["news", "block"],
+    "category": "myblocks",
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "gift.php"
+    },
+    "example": {
+        "attributes": {}
+    },
+    "align": "full"
+}

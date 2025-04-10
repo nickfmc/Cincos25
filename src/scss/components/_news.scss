@@ -1,0 +1,193 @@
+    .c-news-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 2rem;
+        padding: 2rem 0;
+    }
+
+    .c-news-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .c-news-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .c-news-image-wrapper {
+        position: relative;
+        padding-top: 56.25%;
+        background: #f5f5f5;
+        overflow: hidden;
+    }
+
+    .c-news-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .c-news-content {
+        padding: 1.5rem;
+    }
+
+    .c-news-category {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        background: #f8f9fa;
+        border-radius: 20px;
+        font-size: 0.875rem;
+        color: #666;
+        margin-bottom: 0.75rem;
+    }
+
+    .c-news-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 0 0 0.75rem 0;
+        color: #1a1a1a;
+        line-height: 1.4;
+    }
+
+    .c-news-date {
+        display: block;
+        font-size: 0.875rem;
+        color: #666;
+        margin-bottom: 0.75rem;
+    }
+
+    .c-news-excerpt {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #4a4a4a;
+        margin: 0;
+    }
+
+    .c-news-no-image {
+        background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .c-news-no-posts {
+        text-align: center;
+        padding: 2rem;
+        color: #666;
+    }
+
+    .c-news-read-more {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 1rem;
+        color: #000; /* or your brand color */
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+    
+    .c-news-read-more:hover {
+        color: #666; /* or your brand hover color */
+    }
+    
+    .c-news-read-more svg {
+        transition: transform 0.3s ease;
+    }
+    
+    .c-news-read-more:hover svg {
+        transform: translateX(5px);
+    }
+    
+
+    @media (max-width: 768px) {
+        .c-news-grid {
+            grid-template-columns: 1fr;
+            padding: 1rem 0;
+        }
+    }
+
+
+    /* If there's no image, add extra padding at the top */
+    .c-news-card:not(:has(.c-news-image-wrapper)) .c-news-content {
+        padding-top: 2.5rem;
+    }
+    
+    /* Layout styles */
+  .page-id-255  .editor-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+    
+    .c-single-layout {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        gap: 3rem;
+        padding: 70px 0;
+    }
+    
+    /* Main content styles */
+    .c-single-content {
+        min-width: 0; /* Prevents content overflow */
+    }
+    
+    .c-featured-image {
+        margin-bottom: 2rem;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    .c-featured-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    
+    .c-article-header {
+        margin-bottom: 2rem;
+    }
+    
+    /* Sidebar styles */
+    .c-single-sidebar {
+   
+    }
+    
+    /* Responsive design */
+    @media (max-width: 768px) {
+        .c-single-layout {
+            grid-template-columns: 1fr;
+        }
+        
+        .c-single-sidebar {
+            position: static;
+            max-height: none;
+        }
+        
+        .editor-content {
+            padding: 1rem;
+        }
+    }
+    
+    /* Optional content styling */
+    // .c-single-content {
+    //     font-size: 1.1rem;
+    //     line-height: 1.6;
+    // }
+    
+    // .c-single-content p {
+    //     margin-bottom: 1.5rem;
+    // }
+    
+    // .c-single-content img {
+    //     max-width: 100%;
+    //     height: auto;
+    // }
+    

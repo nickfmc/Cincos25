@@ -8,7 +8,7 @@
   display: flex;
 
   gap: 10px;
-  flex-direction: column-reverse;
+  flex-direction: column;
   @media(width >= $bp-medium) {
     align-items: flex-end;
   
@@ -25,6 +25,10 @@ img {
   @media(width >= $bp-large) {
   margin: 0;
   } 
+}
+a {
+  color: $color-yellow;
+
 }
 }
 
@@ -70,11 +74,9 @@ flex-wrap: wrap;
 }
 
 .c-footer-social {
-  margin-top: 10px;
   margin-bottom: 20px;
   display: flex;
-align-items: center;
-justify-content: center;
+
 gap: 24px;
 
 color: $color-yellow;
@@ -87,6 +89,10 @@ a {
 }
 }
 
+.c-footer-logo {
+  width: 220px;
+  max-width: 100%;
+}
 .c-address-list {
   height: 100%;
   display: flex;
@@ -95,7 +101,7 @@ a {
   flex-direction: column;
   @media(width >= 465px) {
     flex-direction: row;
-  align-items: center;
+
 
   } 
   h2 {
@@ -104,3 +110,12 @@ a {
 
 }
 
+.c-footer-buttons {
+  display: flex;
+  gap: 25px;
+  flex-direction: column-reverse;
+
+  .order-button {
+    margin-left: 0;
+  }
+}

@@ -52,7 +52,7 @@ if($image){
 <div class="c-doordash">
   <div class="o-wrapper-wide">
     <div class="c-doordash-content">
-      <h2 class="h5-style">Deliver With:</h2>
+      <h2 class="h5-style">Delivery With:</h2>
       <a href="https://order.online/online-ordering/business/-245866/"><img src="<?php bloginfo( 'template_url' ) ?>/img/doordash.svg" alt="Doordash logo" /></a>
     </div>
   </div>

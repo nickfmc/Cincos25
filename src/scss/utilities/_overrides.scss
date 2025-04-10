@@ -8,6 +8,7 @@
       content: "";
       position: absolute;
       bottom: 0;
+      left: 0;
       height: 120px;
       background-color: #fff;
       width: 100%;
@@ -16,6 +17,7 @@
       content: "";
       position: absolute;
       top: 0;
+      left: 0;
       height: 120px;
       background-color: #fff;
       width: 100%;
@@ -159,3 +161,13 @@
 }
 
 
+.c-sidebar-content {
+  .tribe-events-widget-events-list__view-more-link {
+    display: none !important;
+  }
+}
+
+
+.piotnet-column__inner > :not(.piotnet-widget) {
+  padding: 0 !important;
+}

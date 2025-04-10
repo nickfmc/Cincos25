@@ -1,23 +1,28 @@
 <?php get_header(); ?>
 
   <div class="o-layout-row">
+  <div class="c-hero">
+    <div class="o-wrapper">
+      <div class="c-hero__content">
+      <p style="color:#FFD529;"><strong>404 Error - NACHO LUCKY DAY</strong></p>
+      </div>
+    </div>
+  </div>
+
     <main id="main-content" class="o-wrapper-wide" role="main" itemscope itemprop="mainContentOfPage" itemtype="https://schema.org/WebPageElement">
       <section class="editor-content">
         <div class="c-404-layout alignwide">
           <div>
             <div>
-              <p><strong>404 error</strong></p>
-              <h1>Page not found</h1>
-              <p>Sorry, the page you are looking for does not exist.
-                         Return to the <a href="<?php echo home_url(); ?>">homepage</a>.</p>
+
+<h1 class="h3-style">Holy Guacamole! This Page is Missing!</h1>
+<p>Seems like this page pulled a disappearing act faster than a taco on Tuesday! 
+   Don't let it get jalapeño business - 
+   <a href="<?php echo home_url(); ?>">head back to our homepage</a> 
+  </p>
+
             </div>
-            <form role="search" method="get" id="search-form" class="c-search-form" action="<?php echo home_url( '/' ); ?>">
-              <div>
-                <label for="s" class="u-visually-hidden">Search our site:</label>
-                <input type="search" id="s" name="s" value="" class="search-input" placeholder="Search our site" />
-                <button type="submit" id="search-submit" class="search-submit">Search</button>
-              </div>
-            </form>
+          
           </div>
           <div>
           <svg width="514" height="164" viewBox="0 0 514 164" fill="none" xmlns="http://www.w3.org/2000/svg">
