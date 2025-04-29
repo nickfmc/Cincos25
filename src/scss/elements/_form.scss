@@ -78,3 +78,12 @@ form {
     top: 2px; /* Gives a subtle order-button press effect */
   }
 }
+
+.piotnetforms-message-success {
+  background-color: $color-green;
+  color: $color-white;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px auto;
+  width: 80%;
+}

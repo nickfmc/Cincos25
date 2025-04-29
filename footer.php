@@ -1,4 +1,4 @@
-  <footer class="o-section c-page-footer" id="c-page-footer" role="contentinfo" itemscope itemtype="https://schema.org/WPFooter">
+<footer class="o-section c-page-footer" id="c-page-footer" role="contentinfo" itemscope itemtype="https://schema.org/WPFooter">
 
     <div class="c-page-footer-upper">
       <div class="o-wrapper-wide">
@@ -83,6 +83,31 @@
 
   <!-- all js scripts are loaded in lib/gdt-enqueues.php -->
   <?php wp_footer(); ?>
+
+<?php if (is_front_page() && get_field('turn_on_alert_bar', 'option')): ?>
+  <div id="alert-bar" class="alert-bar">
+    <div class="alert-bar__content">
+      <?php echo esc_html(get_field('text', 'option')); ?>
+    </div>
+    <button class="alert-bar__close" aria-label="Close alert">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const alertBar = document.getElementById('alert-bar');
+      const closeBtn = alertBar.querySelector('.alert-bar__close');
+      
+      closeBtn.addEventListener('click', function() {
+        alertBar.style.opacity = '0';
+        setTimeout(() => {
+          alertBar.style.display = 'none';
+        }, 300);
+      });
+    });
+  </script>
+<?php endif; ?>
 
 </body>
 </html>

@@ -144,3 +144,61 @@
         padding: 10px 20px;
     }
 }
+
+// alert bar styling
+
+// Alert Bar
+.alert-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $color-black;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    z-index: 9999;
+    transition: opacity 0.3s ease;
+    box-shadow: 0px -6px 0 #4f4c4d;
+    font-family: "Oswald", serif;
+    font-weight: 600;
+
+    &__content {
+        text-align: center;
+        font-size: 1.125rem;
+    }
+
+    &__close {
+        background: none;
+        border: none;
+        padding: 0.5rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: currentColor;
+        position: absolute;
+        right: 10px;
+        top: -40px;
+        background-color: $color-yellow;
+        color: $color-black;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        font-size: 1.5rem;
+        line-height: 1;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+        &:hover {
+            background-color: $color-green;
+            color: #fff;
+        }
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}
