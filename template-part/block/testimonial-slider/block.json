@@ -1,0 +1,16 @@
+{
+    "name": "acf/testimonial-slider",
+    "title": "Testimonial Slider",
+    "description": "A testimonial slider with 5-taco ratings for customer reviews",
+    "icon": "format-quote",
+    "keywords": ["testimonial", "slider", "review", "taco", "rating"],
+    "category": "myblocks",
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "testimonial-slider.php"
+    },
+    "example": {
+        "attributes": {}
+    },
+    "align": "full"
+}

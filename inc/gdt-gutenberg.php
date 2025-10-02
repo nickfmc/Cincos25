@@ -74,6 +74,7 @@ function register_acf_blocks() {
   // register_block_type(  get_stylesheet_directory() . '/template-part/block/button/block.json' );
   register_block_type(  get_stylesheet_directory() . '/template-part/block/news/block.json' );
   register_block_type(  get_stylesheet_directory() . '/template-part/block/giftcard/block.json' );
+  register_block_type(  get_stylesheet_directory() . '/template-part/block/testimonial-slider/block.json' );
   // register_block_type(  get_stylesheet_directory() . '/template-part/block/swiper-material/block.json' );
   // register_block_type(  get_stylesheet_directory() . '/template-part/block/swiper-projects/block.json' );
 }

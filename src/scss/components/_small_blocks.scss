@@ -149,22 +149,30 @@
 
 // Alert Bar
 .alert-bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: $color-black;
-    color: #fff;
-    padding: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    z-index: 9999;
-    transition: opacity 0.3s ease;
-    box-shadow: 0px -6px 0 #4f4c4d;
-    font-family: "Oswald", serif;
-    font-weight: 600;
+   position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #FFD529;
+  color: #231F20;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 1rem;
+  z-index: 9999;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+  -webkit-box-shadow: 0px -6px 0 #4f4c4d;
+  box-shadow: 0px -6px 0 #4f4c4d;
+  font-family: "Oswald",serif;
+  font-weight: 600;
 
     &__content {
         text-align: center;
@@ -194,7 +202,7 @@
         transition: background-color 0.3s ease;
         &:hover {
             background-color: $color-green;
-            color: #fff;
+            color: #fff; 
         }
 
         &:hover {

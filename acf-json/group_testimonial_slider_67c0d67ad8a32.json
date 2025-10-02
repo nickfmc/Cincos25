@@ -1,0 +1,213 @@
+{
+    "key": "group_testimonial_slider_67c0d67ad8a32",
+    "title": "Testimonial Slider",
+    "fields": [
+        {
+            "key": "field_testimonials_67c0d67ad8a33",
+            "label": "Testimonials",
+            "name": "testimonials",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Add customer testimonials with photos, quotes, and names. Each testimonial will show 5 tacos rating.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 1,
+            "max": 10,
+            "collapsed": "field_testimonial_name_67c0d67ad8a36",
+            "button_label": "Add Testimonial",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_testimonial_image_67c0d67ad8a34",
+                    "label": "Customer Photo",
+                    "name": "customer_image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Upload a photo of the customer (optional)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "preview_size": "thumbnail"
+                },
+                {
+                    "key": "field_testimonial_quote_67c0d67ad8a35",
+                    "label": "Testimonial Quote",
+                    "name": "testimonial_quote",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Enter the customer's testimonial",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "70",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 4,
+                    "placeholder": "Enter the customer testimonial here...",
+                    "allow_in_bindings": 0
+                },
+                {
+                    "key": "field_testimonial_name_67c0d67ad8a36",
+                    "label": "Customer Name",
+                    "name": "customer_name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Enter the customer's name",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "Customer Name",
+                    "prepend": "",
+                    "append": "",
+                    "allow_in_bindings": 0
+                },
+                {
+                    "key": "field_testimonial_rating_info_67c0d67ad8a37",
+                    "label": "Rating",
+                    "name": "rating_info",
+                    "aria-label": "",
+                    "type": "message",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "🌮🌮🌮🌮🌮<br><strong>All testimonials show 5 tacos!</strong><br><em>We only feature our best reviews.</em>",
+                    "new_lines": "wpautop",
+                    "esc_html": 0,
+                    "allow_in_bindings": 0
+                }
+            ]
+        },
+        {
+            "key": "field_slider_settings_67c0d67ad8a38",
+            "label": "Slider Settings",
+            "name": "slider_settings",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large",
+            "sub_fields": [
+                {
+                    "key": "field_autoplay_67c0d67ad8a39",
+                    "label": "Autoplay",
+                    "name": "autoplay",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "Automatically advance slides",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui_on_text": "Yes",
+                    "ui_off_text": "No",
+                    "ui": 1,
+                    "allow_in_bindings": 0
+                },
+                {
+                    "key": "field_autoplay_speed_67c0d67ad8a40",
+                    "label": "Autoplay Speed (seconds)",
+                    "name": "autoplay_speed",
+                    "aria-label": "",
+                    "type": "range",
+                    "instructions": "How long to show each slide",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_autoplay_67c0d67ad8a39",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 5,
+                    "min": 2,
+                    "max": 10,
+                    "step": 1,
+                    "prepend": "",
+                    "append": "seconds",
+                    "allow_in_bindings": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/testimonial-slider"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_display_title": "",
+    "acfe_autosync": "",
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": ""
+}
