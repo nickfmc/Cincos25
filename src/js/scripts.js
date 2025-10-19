@@ -363,8 +363,8 @@ document.addEventListener('DOMContentLoaded', function() {
           }
           
           // Then show the order modal
-          modal.style.display = 'block';
           modal.setAttribute('aria-hidden', 'false');
+          modal.classList.add('show');
       });
   });
 
@@ -433,7 +433,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
 
     function closeModal() {
-        modal.style.display = 'none';
+        modal.classList.remove('show');
         modal.setAttribute('aria-hidden', 'true');
         // Reset to first screen
         orderTypeSelection.classList.add('hidden');
@@ -547,6 +547,55 @@ jQuery( document ).ready(function( $ ) {
   //        this.st.mainClass = 'mfp-move-from-side menu-popup';
   //        $('body').addClass('mfp-active');
   //     },
+    // WMUR Video Modal
+    const wmurModal = document.querySelector('.wmur-video-modal');
+    const wmurButton = document.querySelector('.wmur-video-button');
+    const wmurCloseButton = wmurModal?.querySelector('.close-button');
+
+    if (wmurButton && wmurModal) {
+        // Open WMUR video modal
+        wmurButton.addEventListener('click', function() {
+            wmurModal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            
+            // Trigger smooth animation
+            wmurModal.classList.add('show');
+        });
+
+        // Close WMUR video modal
+        function closeWmurModal() {
+            wmurModal.classList.remove('show');
+            wmurModal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = ''; // Restore scrolling
+            
+            // Stop the video by reloading the iframe
+            const iframe = wmurModal.querySelector('iframe');
+            if (iframe) {
+                const src = iframe.src;
+                iframe.src = '';
+                iframe.src = src;
+            }
+        }
+
+        if (wmurCloseButton) {
+            wmurCloseButton.addEventListener('click', closeWmurModal);
+        }
+
+        // Close modal when clicking outside
+        wmurModal.addEventListener('click', function(e) {
+            if (e.target === wmurModal) {
+                closeWmurModal();
+            }
+        });
+
+        // Close modal with escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && wmurModal.style.display === 'block') {
+                closeWmurModal();
+            }
+        });
+    }
+
   //     open: function() { 
   //       $('#close-modal, .close-modal-navigation').on('click',function(event){
   //         event.preventDefault();

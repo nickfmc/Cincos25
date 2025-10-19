@@ -4909,25 +4909,42 @@ select:focus,
 }
 
 .order-modal {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  -webkit-transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s ease;
+}
+.order-modal.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
+}
+.order-modal.show .modal-content {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
 }
 
 .modal-content {
-  -webkit-transition: height 0.3s ease;
-  transition: height 0.3s ease;
+  -webkit-transition: height 0.3s ease, opacity 0.3s ease, -webkit-transform 0.3s ease;
+  transition: height 0.3s ease, opacity 0.3s ease, -webkit-transform 0.3s ease;
+  transition: height 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+  transition: height 0.3s ease, transform 0.3s ease, opacity 0.3s ease, -webkit-transform 0.3s ease;
   overflow: hidden;
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%) scale(0.7);
+          transform: translate(-50%, -50%) scale(0.7);
   background-color: white;
   padding: 60px 30px 30px 30px;
   border-radius: 10px;
@@ -4935,9 +4952,7 @@ select:focus,
   max-width: 500px;
   -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  -webkit-animation: fadeIn 0.3s ease;
-          animation: fadeIn 0.3s ease;
-  transition: height 0.3s ease;
+  opacity: 0;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -5107,6 +5122,115 @@ select:focus,
     width: 100%;
   }
 }
+.wmur-video-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 10001;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  -webkit-transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s ease;
+}
+.wmur-video-modal.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.wmur-video-modal.show .modal-content {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+.wmur-video-modal .modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0.7);
+          transform: translate(-50%, -50%) scale(0.7);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 800px;
+  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+  transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease, -webkit-transform 0.3s ease;
+}
+@media (width >= 992px) {
+  .wmur-video-modal .modal-content {
+    padding: 30px;
+    max-width: 900px;
+  }
+}
+.wmur-video-modal .video-content h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #0f105f;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1.5rem;
+}
+@media (width >= 992px) {
+  .wmur-video-modal .video-content h2 {
+    font-size: 2rem;
+  }
+}
+.wmur-video-modal .video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.wmur-video-modal .video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.wmur-video-modal .close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #ACACAC;
+  z-index: 10002;
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+.wmur-video-modal .close-button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.wmur-video-modal .close-button svg {
+  width: 20px;
+  height: 20px;
+}
+
 .c-pill-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5369,6 +5493,134 @@ select:focus,
   }
 }
 
+.wmur-video-button {
+  background: linear-gradient(135deg, #FFD700, #c22335);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  margin: 16px auto 0 auto;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+          box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  -webkit-animation: jiggle 2s infinite;
+          animation: jiggle 2s infinite;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+@media (width >= 1030px) {
+  .wmur-video-button {
+    margin: 16px 0 0 0;
+  }
+}
+.wmur-video-button:hover {
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+  -webkit-box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+          box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+.wmur-video-button:active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.wmur-video-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(rgba(255, 255, 255, 0.2)), to(transparent));
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  -webkit-transition: left 0.5s;
+  transition: left 0.5s;
+}
+.wmur-video-button:hover::before {
+  left: 100%;
+}
+.wmur-video-button svg {
+  fill: currentColor;
+  stroke: none;
+}
+
+@-webkit-keyframes jiggle {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  10% {
+    -webkit-transform: rotate(-3deg);
+            transform: rotate(-3deg);
+  }
+  30% {
+    -webkit-transform: rotate(3deg);
+            transform: rotate(3deg);
+  }
+  40% {
+    -webkit-transform: rotate(-1deg);
+            transform: rotate(-1deg);
+  }
+  60% {
+    -webkit-transform: rotate(1deg);
+            transform: rotate(1deg);
+  }
+  70% {
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+  }
+  90% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+}
+
+@keyframes jiggle {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  10% {
+    -webkit-transform: rotate(-3deg);
+            transform: rotate(-3deg);
+  }
+  30% {
+    -webkit-transform: rotate(3deg);
+            transform: rotate(3deg);
+  }
+  40% {
+    -webkit-transform: rotate(-1deg);
+            transform: rotate(-1deg);
+  }
+  60% {
+    -webkit-transform: rotate(1deg);
+            transform: rotate(1deg);
+  }
+  70% {
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+  }
+  90% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+}
 .c-taco-illustration {
   position: absolute;
   right: -60px;

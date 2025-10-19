@@ -12,7 +12,15 @@ Template Name: Home Page
     <div class="c-home-hero-content">
       <h1>Share a Taco,<br /> Share a Smile</h1>
       <p class="home-alert" role="heading">Open for lunch and dinner 7 days a week!</p>
-      <button class="order-button" aria-haspopup="true" aria-expanded="false">Order Online</button>
+      <!-- <button class="order-button" aria-haspopup="true" aria-expanded="false">Order Online</button> -->
+      
+      <button class="wmur-video-button" aria-haspopup="true" aria-expanded="false">
+        As seen on WMUR
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="5,3 19,12 5,21"></polygon>
+        </svg>
+      </button>
+       
     </div>
   <div class="c-taco-swipe">
     <div class="c-taco-illustration"><img  src="<?php bloginfo( 'template_url' ) ?>/img/taco.png" alt="taco illustration" /></div>
@@ -45,6 +53,31 @@ if($image){
 
         </div>
   </div>
+  </div>
+</div>
+
+<!-- WMUR Video Modal -->
+<div class="wmur-video-modal" role="dialog" aria-hidden="true">
+  <div class="modal-content">
+    <button class="close-button" aria-label="Close modal">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <div class="video-content">
+      <h2>Cinco's Cantina on WMUR</h2>
+      <div class="video-wrapper">
+        <iframe 
+          src="https://www.youtube.com/embed/U4LVT6C-D8M?si=GlHo3tgIyIpsyDJZ" 
+          title="Cinco's Cantina on WMUR" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
   </div>
 </div>
 
