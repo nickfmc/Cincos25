@@ -84,10 +84,19 @@
   <!-- all js scripts are loaded in lib/gdt-enqueues.php -->
   <?php wp_footer(); ?>
 
+
 <?php if (is_front_page() && get_field('turn_on_alert_bar', 'option')): ?>
+  <?php 
+    $alert_text = get_field('text', 'option');
+    $alert_url = get_field('alert_bar_url', 'option');
+  ?>
   <div id="alert-bar" class="alert-bar">
     <div class="alert-bar__content">
-      <?php echo esc_html(get_field('text', 'option')); ?>
+      <?php if ($alert_url): ?>
+        <a href="<?php echo esc_url($alert_url); ?>" class="alert-bar__link"><?php echo esc_html($alert_text); ?></a>
+      <?php else: ?>
+        <?php echo esc_html($alert_text); ?>
+      <?php endif; ?>
     </div>
     <button class="alert-bar__close" aria-label="Close alert">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
